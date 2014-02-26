@@ -1,0 +1,28 @@
+{
+  "name": "lookatmycode",
+  "author": {
+    "name": "Aleksandr Solovey",
+    "email": "xelbox@gmail.com"
+  },
+  "dependencies": {
+    "express": "latest",
+    "jade": "latest",
+    "grunt": "latest",
+    "grunt-cli": "latest",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-coffee": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-less": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-coffeelint": "*",
+    "grunt-includes": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-htmlmin": "*"
+  },
+  "scripts": {
+    "start": "node ./bin/app.js"
+  }
+}
