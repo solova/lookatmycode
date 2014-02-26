@@ -1,3 +1,23 @@
-div {
-  color: red;
+html,
+body {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #222;
+}
+h1 {
+  color: white;
+}
+#editor {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border: 0 none;
+  resize: none;
+  outline: none;
 }
