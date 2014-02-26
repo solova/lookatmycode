@@ -1,9 +1,7 @@
 var editor;
 
-editor = void 0;
+editor = ace.edit("editor");
 
-$(function() {
-  editor = ace.edit("editor");
-  editor.setTheme("ace/theme/monokai");
-  return editor.getSession().setMode('ace/mode/javascript');
-});
+editor.setTheme("ace/theme/monokai");
+
+editor.getSession().setMode('ace/mode/javascript');

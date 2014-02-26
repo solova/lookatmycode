@@ -4,11 +4,13 @@ html(lang="en")
         title= "LookAtMyCode"
         //- link(rel="stylesheet", href="lib/pure.css")
         link(rel="stylesheet", href="styles.css")
+        link(rel="stylesheet", href="https://netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css")
         script(type='text/javascript',src='lib/jquery.js',charset="utf-8")
         script(type='text/javascript',src='lib/lodash.js',charset="utf-8")
         script(type='text/javascript',src='lib/backbone.js',charset="utf-8")
-        script(type='text/javascript',src='//cdnjs.cloudflare.com/ajax/libs/ace/1.1.01/ace.js',charset="utf-8")
-        script(type='text/javascript',src='scripts.js',charset="utf-8")
+        script(type='text/javascript',src='lib/ace/ace.js',charset="utf-8")
+        script(type='text/javascript',src='lib/ace/ext-static_highlight.js',charset="utf-8")
     body
         h1 LookAtMyCode.org
-        textarea#editor.code
+        div#editor.code
+        script(type='text/javascript',src='scripts.js',charset="utf-8")
