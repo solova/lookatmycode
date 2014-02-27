@@ -11,6 +11,8 @@ lang =
         "like1": "like"
         "views": "views"
         "view1": "view"
+        "newcode": "New Code"
+        "save": "Save"
     ru:
         "about": "О проекте"
         "source": "Исходные коды"
@@ -23,4 +25,6 @@ lang =
         "like1": "одобрение"
         "views": "просмотров"
         "view1": "просмотр"
+        "newcode": "Новый код"
+        "save": "Сохранить"
 

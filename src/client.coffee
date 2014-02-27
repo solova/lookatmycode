@@ -1,12 +1,9 @@
 editor = ace.edit "editor"
 editor.setTheme "ace/theme/monokai"
-
-# editor.getSession().setTabSize(2)
-# editor.getSession().setUseSoftTabs(true)
-# editor.renderer.setShowPrintMargin(false)
-
 editor.getSession().setMode 'ace/mode/javascript'
 
-window.onresize = (event) ->
-    console.log('resize')
-    document.getElementById('editor').style.height = window.innerHeight - 144
+$ ->
+    fnResize = ->
+        $("#editor").css("height", $(window).height() - 144)
+    $(window).resize(fnResize)
+    fnResize()

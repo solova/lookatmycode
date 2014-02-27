@@ -10,6 +10,7 @@
     "locale": "latest",
     "lodash": "latest",
     "moment": "latest",
+    "everyauth": "latest",
     "grunt": "latest",
     "grunt-cli": "latest",
     "grunt-contrib-concat": "*",
