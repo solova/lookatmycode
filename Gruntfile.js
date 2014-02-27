@@ -6,7 +6,8 @@ module.exports = function (grunt) {
         copy: {
             main: {
                 files: [
-                    {src: ['**'], dest: 'public/lib', cwd: 'src/lib/', expand: true}
+                    {src: ['**'], dest: 'public/lib', cwd: 'src/lib/', expand: true},
+                    {src: ['**'], dest: 'public/img', cwd: 'img/', expand: true}
                 ]
             }
         },
@@ -31,7 +32,7 @@ module.exports = function (grunt) {
                     bare: true
                 },
                 files: {
-                    "bin/app.js": "src/server.coffee",
+                    "bin/app.js": ["src/languages.coffee", "src/server.coffee"],
                     "public/scripts.js": "src/client.coffee"
                 }
             }

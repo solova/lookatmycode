@@ -1,0 +1,26 @@
+lang =
+    en:
+        "about": "About"
+        "source": "Source"
+        "changelog": "Change log"
+        "motto": "create, share, like, comment"
+        "fork": "Fork"
+        "download": "Download"
+        "like": "Like"
+        "likes": "likes"
+        "like1": "like"
+        "views": "views"
+        "view1": "view"
+    ru:
+        "about": "О проекте"
+        "source": "Исходные коды"
+        "changelog": "История изменений"
+        "motto": "создавай, делись, одобряй, комментируй"
+        "fork": "Ответвиться"
+        "download": "Скачать"
+        "like": "Одобряю"
+        "likes": "одобрений"
+        "like1": "одобрение"
+        "views": "просмотров"
+        "view1": "просмотр"
+

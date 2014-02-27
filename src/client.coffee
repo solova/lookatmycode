@@ -6,3 +6,7 @@ editor.setTheme "ace/theme/monokai"
 # editor.renderer.setShowPrintMargin(false)
 
 editor.getSession().setMode 'ace/mode/javascript'
+
+window.onresize = (event) ->
+    console.log('resize')
+    document.getElementById('editor').style.height = window.innerHeight - 144

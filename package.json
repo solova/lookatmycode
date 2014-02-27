@@ -7,6 +7,9 @@
   "dependencies": {
     "express": "latest",
     "jade": "latest",
+    "locale": "latest",
+    "lodash": "latest",
+    "moment": "latest",
     "grunt": "latest",
     "grunt-cli": "latest",
     "grunt-contrib-concat": "*",
