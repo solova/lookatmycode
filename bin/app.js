@@ -2,7 +2,7 @@ var conf;
 
 conf = {
   fb: {
-    appId: 625598667514068,
+    appId: "625598667514068",
     appSecret: "1e60173b3db3c0acf306943122fdbdff"
   }
 };
@@ -42,7 +42,7 @@ lang = {
   }
 };
 
-var app, everyauth, express, locale, supported, _;
+var addUser, app, everyauth, express, locale, nextUserId, supported, usersByFbId, usersById, _;
 
 everyauth = require('everyauth');
 
@@ -58,9 +58,32 @@ app = express();
 
 everyauth.debug = true;
 
-everyauth.facebook.appId(conf.fb.appId).entryPath('/auth/facebook').appSecret(conf.fb.appSecret).findOrCreateUser(function(session, accessToken, accessTokenExtra, fbUserMetadata) {
-  return usersByFbId[fbUserMetadata.id] || (usersByFbId[fbUserMetadata.id] = addUser('facebook', fbUserMetadata));
-}).redirectPath('/');
+nextUserId = 0;
+
+usersById = {};
+
+usersByFbId = {};
+
+addUser = function(source, sourceUser) {
+  var user;
+  user = usersById[++nextUserId] = {
+    id: nextUserId
+  };
+  user[source] = sourceUser;
+  return user;
+};
+
+everyauth.everymodule.findUserById(function(id, callback) {
+  return callback(null, usersById[id]);
+});
+
+everyauth.facebook.appId(conf.fb.appId).appSecret(conf.fb.appSecret).redirectPath('/').findOrCreateUser(function(session, accessToken, accessTokenExtra, fbUserMetadata) {
+  if (!usersByFbId[fbUserMetadata.id]) {
+    usersByFbId[fbUserMetadata.id] = addUser('facebook', fbUserMetadata);
+  }
+  console.log(fbUserMetadata);
+  return usersByFbId[fbUserMetadata.id];
+});
 
 app.set('view engine', 'jade');
 

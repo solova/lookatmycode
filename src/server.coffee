@@ -11,12 +11,35 @@ everyauth.debug = true
 
 # everyauth.everymodule.findUserById( (id, callback) -> callback(null, usersById[id]))
 
-everyauth.facebook.appId(conf.fb.appId)
-    .entryPath('/auth/facebook')
+nextUserId = 0
+usersById = {}
+usersByFbId = {}
+addUser = (source, sourceUser) ->
+    user = usersById[++nextUserId] = id: nextUserId
+    user[source] = sourceUser
+    user
+
+
+# everyauth.everymodule.findUserById( (userId, callback) ->
+#     app.User.findById(userId, (err,user) ->
+#     if err
+#         new Error("No user by that ID")
+#     else
+#         callback(user)
+#     )
+# )
+
+everyauth.everymodule .findUserById( (id, callback) -> callback(null, usersById[id]))
+
+everyauth.facebook
+    .appId(conf.fb.appId)
     .appSecret(conf.fb.appSecret)
+    .redirectPath('/')
     .findOrCreateUser( (session, accessToken, accessTokenExtra, fbUserMetadata) ->
-        usersByFbId[fbUserMetadata.id] || (usersByFbId[fbUserMetadata.id] = addUser('facebook', fbUserMetadata))
-    ).redirectPath('/')
+        usersByFbId[fbUserMetadata.id] = addUser('facebook', fbUserMetadata) if not usersByFbId[fbUserMetadata.id]
+        console.log fbUserMetadata
+        usersByFbId[fbUserMetadata.id]
+    )
 
 # everyauth.facebook
 #   .entryPath('/auth/facebook')

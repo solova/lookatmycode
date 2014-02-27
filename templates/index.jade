@@ -17,10 +17,6 @@ html(lang="en")
                 .navbar-inner
                     h2.pull-left LookAtMyCode.org
 
-                    #fb-login.fb_button(style='background-position: left -188px')
-                        a.fb_button_medium(href='/auth/facebook')
-                            span#fb_login_text.fb_button_text Connect with Facebook
-
                     .pull-right
                         h5= locale.motto
                         ul.nav
@@ -34,15 +30,20 @@ html(lang="en")
                     .container
                         a.brand(href="#") Aleksandr's code
                         .btn-group
-                            button.btn.btn-inverse
-                                i.icon-edit.icon-white
-                                |  #{locale.fork}
-                            button.btn.btn-inverse
-                                i.icon-download.icon-white
-                                |  #{locale.download}
-                            button.btn.btn-inverse 
-                                i.icon-thumbs-up.icon-white
-                                |  #{locale.like}
+                            if (!everyauth.loggedIn)
+                                #fb-login.fb_button.btn.btn-inverse
+                                    a.fb_button_medium(href='/auth/facebook')
+                                        span#fb_login_text.fb_button_text Connect with Facebook
+                            else
+                                button.btn.btn-inverse
+                                    i.icon-edit.icon-white
+                                    |  #{locale.fork}
+                                button.btn.btn-inverse
+                                    i.icon-download.icon-white
+                                    |  #{locale.download}
+                                button.btn.btn-inverse 
+                                    i.icon-thumbs-up.icon-white
+                                    |  #{locale.like}
                         ul.nav.pull-right
                             li
                                 .btn-group
@@ -73,6 +74,8 @@ html(lang="en")
                         p.pull-left Created by Aleksandr Solovey two days ago
                         p.pull-right 5 #{(5==1) ? (locale.like1) : (locale.likes)}, 15 #{(15 == 1) ? locale.view1 : locale.views}
         .container.wrapper
+            if everyauth.loggedIn
+                p= JSON.stringify(everyauth.facebook.user)
             div#editor.code
         
         script(type='text/javascript',src='scripts.js',charset="utf-8")
