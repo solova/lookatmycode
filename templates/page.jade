@@ -1,0 +1,29 @@
+doctype html
+html(lang="en")
+    head
+        title LookAtMyCode
+        //- link(rel="stylesheet", href="lib/font-awesome.css")
+        link(rel="stylesheet", href="lib/bootstrap.css")
+        link(rel="stylesheet", href="styles.css")
+        script(type='text/javascript',src='lib/jquery.js',charset="utf-8")
+        script(type='text/javascript',src='lib/lodash.js',charset="utf-8")
+        script(type='text/javascript',src='lib/backbone.js',charset="utf-8")
+        script(type='text/javascript',src='lib/bootstrap.js',charset="utf-8")
+        script(type='text/javascript',src='lib/ace/ace.js',charset="utf-8")
+        script(type='text/javascript',src='lib/ace/ext-static_highlight.js',charset="utf-8")
+    body
+        .container.hat
+            .navbar.navbar-inverse
+                .navbar-inner
+                    h2.pull-left
+                        a(href="/") LookAtMyCode.org
+                    .pull-right
+                        h5= locale.motto
+                        ul.nav
+                            li: a(href="/about") #{locale.about} 
+                            li: a(href="https://github.com/solova/lookatmycode") #{locale.source} 
+                            li: a(href="/changelog") #{locale.changelog}
+        .container.info.plain
+            p!= body
+        
+        script(type='text/javascript',src='scripts.js',charset="utf-8")

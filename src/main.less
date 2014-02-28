@@ -28,6 +28,14 @@ body{
 .hat{
     h2{
         color: #444;
+        a{
+            color: #444;
+            text-decoration: none;
+            &:hover{
+                color: #0088cc;
+                text-decoration: none;
+            }
+        }
     }
     h5{
         display: block;
@@ -54,6 +62,17 @@ body{
     .navbar{
         margin-bottom: 0px;
     }
+    &.plain{
+        p,li{
+            padding: 1em;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ddd;
+        }
+    }
+}
+
+.author-wrapper{
+    display: none;
 }
 
 .wrapper{

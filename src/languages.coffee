@@ -13,6 +13,9 @@ lang =
         "view1": "view"
         "newcode": "New Code"
         "save": "Save"
+        "aboutpage": "LookAtMyCode is a system where you can store text for a certain period of time. The system is mainly used by programmers to store, share and like pieces of sources code"
+        "changelogpage": "<ul><li>1.0 - init version</li></ul>"
+        "created": "Created by"
     ru:
         "about": "О проекте"
         "source": "Исходные коды"
@@ -27,4 +30,7 @@ lang =
         "view1": "просмотр"
         "newcode": "Новый код"
         "save": "Сохранить"
+        "aboutpage": "LookAtMyCode &mdash; это система для публикации, комментирования и исследования исходных кодов. Система может быть развёрнута в рамках компании или использоваться в глобальной сети интернет."
+        "changelogpage": "<ul><li>1.0 - первая версия</li></ul>"
+        "created": "Создал"
 

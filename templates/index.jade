@@ -5,56 +5,63 @@ html(lang="en")
         //- link(rel="stylesheet", href="lib/font-awesome.css")
         link(rel="stylesheet", href="lib/bootstrap.css")
         link(rel="stylesheet", href="styles.css")
-        script(type='text/javascript',src='lib/jquery.js',charset="utf-8")
-        script(type='text/javascript',src='lib/lodash.js',charset="utf-8")
-        script(type='text/javascript',src='lib/backbone.js',charset="utf-8")
-        script(type='text/javascript',src='lib/bootstrap.js',charset="utf-8")
-        script(type='text/javascript',src='lib/ace/ace.js',charset="utf-8")
-        script(type='text/javascript',src='lib/ace/ext-static_highlight.js',charset="utf-8")
+        script(type='text/javascript',src='lib/jquery.js',charset='utf-8')
+        script(type='text/javascript',src='lib/lodash.js',charset='utf-8')
+        script(type='text/javascript',src='lib/backbone.js',charset='utf-8')
+        script(type='text/javascript',src='lib/bootstrap.js',charset='utf-8')
+        script(type='text/javascript',src='lib/ace/ace.js',charset='utf-8')
+        script(type='text/javascript',src='lib/ace/ext-static_highlight.js',charset='utf-8')
+        script.
+            window.raw = !{JSON.stringify(code)}
+        if everyauth.loggedIn
+            script.
+                window.user = !{JSON.stringify(everyauth.facebook.user)}
     body
         .container.hat
             .navbar.navbar-inverse
                 .navbar-inner
                     h2.pull-left LookAtMyCode.org
-
                     .pull-right
                         h5= locale.motto
                         ul.nav
                             li: a(href="/about") #{locale.about} 
-                            li: a(href="/source") #{locale.source} 
+                            li: a(href="https://github.com/solova/lookatmycode") #{locale.source} 
                             li: a(href="/changelog") #{locale.changelog}
-
         .container.info
            .navbar.navbar-inverse
                 .navbar-inner
                     .container
-                        a.brand(href="#") Aleksandr's code
+                        a.brand(href="#")= code.title
                         .btn-group
                             if (!everyauth.loggedIn)
                                 #fb-login.fb_button.btn.btn-inverse
                                     a.fb_button_medium(href='/auth/facebook')
                                         span#fb_login_text.fb_button_text Connect with Facebook
-                            else
-                                button.btn.btn-inverse
-                                    i.icon-edit.icon-white
-                                    |  #{locale.fork}
-                                button.btn.btn-inverse
+                                button.btn.btn-inverse.download
                                     i.icon-download.icon-white
                                     |  #{locale.download}
-                                button.btn.btn-inverse 
+                            else
+                                button.btn.btn-inverse.fork
+                                    i.icon-edit.icon-white
+                                    |  #{locale.fork}
+                                button.btn.btn-inverse.download
+                                    i.icon-download.icon-white
+                                    |  #{locale.download}
+                                button.btn.btn-inverse.like
                                     i.icon-thumbs-up.icon-white
                                     |  #{locale.like}
                         ul.nav.pull-right
                             li
                                 .btn-group
-                                    button.btn.btn-inverse
-                                        i.icon-file.icon-white
-                                        |  #{locale.newcode}
+                                    if (everyauth.loggedIn)
+                                        a(href="/").btn.btn-inverse
+                                            i.icon-file.icon-white
+                                            |  #{locale.newcode}
                                     button.btn.btn-inverse.dropdown-toggle(data-toggle="dropdown")
                                         i.icon-th-list.icon-white
-                                        |  JavaScript 
+                                        span.current-lang= code.lang
                                         span.caret
-                                    ul.dropdown-menu
+                                    ul.dropdown-menu.lang-menu
                                         li: a(href="#",data-lang="coffee") CoffeeScript
                                         li: a(href="#",data-lang="css") CSS
                                         li: a(href="#",data-lang="dart") Dart
@@ -71,11 +78,14 @@ html(lang="en")
                                         li: a(href="#",data-lang="xml") XML
 
                     .container
-                        p.pull-left Created by Aleksandr Solovey two days ago
-                        p.pull-right 5 #{(5==1) ? (locale.like1) : (locale.likes)}, 15 #{(15 == 1) ? locale.view1 : locale.views}
+                        p.pull-left.author-wrapper
+                            | #{locale.created} 
+                            span.code-author= code.author
+                        p.pull-right #{code.views} #{(code.views==1) ? (locale.view1) : (locale.views)}
         .container.wrapper
-            if everyauth.loggedIn
-                p= JSON.stringify(everyauth.facebook.user)
-            div#editor.code
+            if (everyauth.loggedIn || code.code.length>1)
+                div#editor.code= code.code
+            else
+                div#editor.code Please log in to access this service
         
         script(type='text/javascript',src='scripts.js',charset="utf-8")

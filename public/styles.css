@@ -15,6 +15,14 @@ body {
 .hat h2 {
   color: #444;
 }
+.hat h2 a {
+  color: #444;
+  text-decoration: none;
+}
+.hat h2 a:hover {
+  color: #0088cc;
+  text-decoration: none;
+}
 .hat h5 {
   display: block;
 }
@@ -36,6 +44,15 @@ body {
 }
 .info .navbar {
   margin-bottom: 0px;
+}
+.info.plain p,
+.info.plain li {
+  padding: 1em;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ddd;
+}
+.author-wrapper {
+  display: none;
 }
 .wrapper #editor {
   width: 100%;
