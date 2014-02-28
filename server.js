@@ -2,8 +2,8 @@ var conf;
 
 conf = {
   fb: {
-    appId: "625598667514068",
-    appSecret: "1e60173b3db3c0acf306943122fdbdff"
+    appId: "237895083065150",
+    appSecret: "3c170320376ee74a6b5b859692123823"
   }
 };
 
