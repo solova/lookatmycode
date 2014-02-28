@@ -10,20 +10,7 @@
     "locale": "latest",
     "lodash": "latest",
     "moment": "latest",
-    "everyauth": "latest",
-    "grunt": "latest",
-    "grunt-contrib-concat": "*",
-    "grunt-contrib-watch": "*",
-    "grunt-contrib-coffee": "*",
-    "grunt-contrib-concat": "*",
-    "grunt-contrib-uglify": "*",
-    "grunt-contrib-less": "*",
-    "grunt-contrib-clean": "*",
-    "grunt-contrib-cssmin": "*",
-    "grunt-coffeelint": "*",
-    "grunt-includes": "*",
-    "grunt-contrib-copy": "*",
-    "grunt-contrib-htmlmin": "*"
+    "everyauth": "latest"
   },
   "scripts": {
     "start": "node ./server.js"

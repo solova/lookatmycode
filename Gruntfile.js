@@ -72,3 +72,19 @@ module.exports = function (grunt) {
     // grunt.registerTask('deploy', ['clean', 'copy', 'concat', 'less','coffeelint','coffee','includes','cssmin', 'uglify'])
 
 };
+
+/*
+    "grunt": "latest",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-coffee": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-less": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-coffeelint": "*",
+    "grunt-includes": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-htmlmin": "*"
+*/
