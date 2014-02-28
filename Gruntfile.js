@@ -32,7 +32,7 @@ module.exports = function (grunt) {
                     bare: true
                 },
                 files: {
-                    "bin/app.js": ["src/config.coffee", "src/languages.coffee", "src/server.coffee"],
+                    "server.js": ["src/config.coffee", "src/languages.coffee", "src/server.coffee"],
                     "public/scripts.js": "src/client.coffee"
                 }
             }

@@ -26,6 +26,6 @@
     "grunt-contrib-htmlmin": "*"
   },
   "scripts": {
-    "start": "node ./bin/app.js"
+    "start": "node ./server.js"
   }
 }
