@@ -12,7 +12,6 @@
     "moment": "latest",
     "everyauth": "latest",
     "grunt": "latest",
-    "grunt-cli": "latest",
     "grunt-contrib-concat": "*",
     "grunt-contrib-watch": "*",
     "grunt-contrib-coffee": "*",

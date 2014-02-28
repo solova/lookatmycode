@@ -71,4 +71,4 @@ app.get '/', (req, res) ->
     res.render 'index',
         locale: lang[locales.best(supported)]
 
-app.listen(process.env.PORT || 8050)
+app.listen(process.env.PORT || 1337)
