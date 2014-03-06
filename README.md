@@ -17,6 +17,9 @@ Demo: http://www.youtube.com/watch?v=BypHFYKb_Yw
 
 ## Install
 
+Clone virtual machine from [vmdepot](http://vmdepot.msopentech.com/Vhd/Show?vhdId=28999) and log in to host via SSH.
+Next run these commands:
+
 ```shell
 cd ~/lookatmycode
 mkdir codes
