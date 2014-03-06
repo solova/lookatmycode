@@ -25,3 +25,7 @@ cd ~/lookatmycode
 mkdir codes
 npm start
 ```
+
+## Update
+
+You can clone/pull from repository to update.
